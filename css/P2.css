@@ -1,0 +1,565 @@
+/*style commun à la page*/
+
+@font-face {
+  font-family: PoliceP2;  
+  src: url("Raleway-Regular.ttf");
+}
+
+body {
+  font-family: PoliceP2, Arial, Helvetica, sans-serif;
+  max-width: 1700px;
+  margin: auto;
+  padding: 0 20px 0 20px;  
+}
+
+ul {
+  list-style-type: none; /*supression puces liste*/
+}
+
+a {
+  text-decoration: none; /*supprime soulignement*/
+}
+p{font-size:13px;}
+
+/*HEADER*/
+
+/*Ligne du haut = logo et menu du haut*/
+#ligneDuHaut {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  height: 100px;  
+}
+
+#logo img {  
+  width: 55%;
+  height: 55%;
+  margin-left: 10px;
+}
+
+#menuDuHaut {
+  display: flex; 
+  justify-content: space-around;
+  align-items: center; /*position vertical des li dans ul*/
+  height: 100%;
+}
+#menuDuHaut li {  
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end; /*position verticale des a dans les li*/
+  height: 65%;
+  margin-right: 40px;
+}
+#menuDuHaut a {
+  display: block; 
+  color: black;
+}
+#menuDuHaut a:hover {
+  color: #0065fc;
+}
+#menuDuHaut li:hover {
+  border-top: solid 2px #0065fc;
+}
+/*fin ligne du haut*/
+
+h1 {
+  font-size: 20px;
+  font-weight: bolder;
+  margin-bottom: -5px;
+}
+.pourCentrerTablette p{
+  font-size: 14px;
+}
+
+/*BLOC RECHERCHE*/
+
+.recherche {  
+  display: flex;
+  width: 300px;
+  height: 50px;
+  margin: 10px 10px 10px 0px;
+}
+/*côté gauche recherche: icone et sa div class "icone geo"*/
+.fa-solid {  
+  padding: 0%;
+  margin: 0%;
+}
+.iconeGeo {
+  background-color: #deebff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0%;
+  border: 0px;
+  border-top-left-radius: 20px;
+  border-bottom-left-radius: 20px;
+  width: 50px;
+  height: 100%;
+}
+
+/*côté droit recherche: div formulaireRecherche composée des 2 éléments entreeVille (centre) et bouton*/
+.formulaireRecherche {  
+  display: flex;
+  justify-content: center;
+  width: 250px; 
+}
+.entreeVille {
+  display: block; /*car les input des form sont inline mais pourquoi ça marche sans?*/
+  border-top: 3px solid #f2f2f2;
+  border-bottom: 3px solid #f2f2f2;
+  border-left: 0px;
+  border-right: 0px;
+  margin: 0%;
+  width: 150px;
+  height: 100%;
+  font-size: medium;
+  font-weight: bold;
+}
+.boutonRechercheI {
+  display: none;
+}
+.boutonRechercheD {
+  display: block;
+  background-color: #0065fc;
+  color: white;
+  border: 0px;
+  border-top-right-radius: 20px;
+  border-bottom-right-radius: 20px;
+  margin: 0%;
+  width: 100px;
+  height: 100%;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+/*ZONE DES FILTRES*/
+
+/*placement titre filtre et bloc ul des 4 filtres à gauche de la div filtres*/
+#filtres {
+  /* background-color: aqua; */
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+}
+#filtres h2 {
+  font-size: medium;
+  font-weight: bolder;
+}
+
+/*disposition des 4 blocs li des filtres dans le bloc ul*/
+#filtres ul { 
+  display: flex;
+  flex-direction: row;
+  width: 75%; /* de la div filtres*/
+  max-width: 750px;
+  justify-content: space-around;
+}
+#filtres li {  
+  display: flex; /*preparation pour dispo 1 icone et 1 a dans chaque li*/
+  flex-direction: row;
+
+  width: auto;
+  height: 100%;
+  margin-right: 5px;
+}
+/*fin de disposition des li des filtres dans la zone ul*/
+
+/*dispo des icones et des liens a dans chaque li filtre*/
+#filtres a {
+  /* background-color: orange; */
+  display: block;
+  color: black;
+  font-weight: bolder;
+  padding: 15px 10px 0px 47px; /*haut dte bas gche laisse la place à l'icone */
+  border: 3px solid #f2f2f2;
+  height: 31px;
+  border-radius: 150px;
+  font-family: "PoliceP2", Arial, Helvetica, sans-serif;
+  margin-left: -47px;
+}
+#filtres a:hover {
+  background-color: #deebff;
+  color: #0065fc;
+}
+
+.iconeFiltre {
+  /* background-color: green; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  background-color: #deebff;
+  opacity: 1;
+  color: #0065fc;
+  margin-right: 0%;
+  z-index: 2;
+  height: 50px;
+  width: 50px;
+}
+
+.iconeFiltre i {  
+  padding: 0%;
+  margin: 0%;
+}
+
+.filtresEtInfo {
+  display: flex;
+  flex-direction: column;
+}
+
+/* ligne d'information */
+.info {  
+  display: flex;
+  align-items: baseline;
+}
+.iconInfo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  background-color: white;
+  color: #0065fc;
+  height: 22px;
+  width: 22px;
+  border: #deebff solid 1px;
+  margin-right: 5px;
+}
+.iconInfo i {
+  /* background-color: purple; */
+  padding: 0%;
+  margin: 0%;
+}
+.info p {
+  /* background-color: green; */
+  width: 85%;
+  font-size: 14px;
+}
+
+/*SECTION HEBERGEMENTS*/
+
+#hebergement {
+  /* background-color: orange; */
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100%;
+}
+#hebergement h2 {
+  /* background-color: yellowgreen; */
+  font-size: 20px;
+  padding-left: 3%;
+  font-weight: bolder;
+  margin-bottom: 25px;
+}
+
+.logementsVille {
+  background-color: #f2f2f2;
+  border-radius: 25px;
+  padding: 10px;
+  width: 70%;
+  height: 600px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin: 10px 10px 10px 0;
+  padding: 2%;
+}
+.divCartes {
+  /* background-color: plum; */
+  display: flex;  
+  justify-content: space-around;
+  width: 100%;
+  height: 75%;
+  flex-wrap: wrap;
+}
+.divCartes a {
+  /* background-color: aqua; */
+  width: 27%;
+  height: 38%;
+  display: block;
+}
+.card {
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;  
+  border-radius: 25px;
+  border: 5px white solid;  
+  box-shadow: 0px 0px 8px 5px rgb(189, 187, 187);
+  width: 100%;
+  height: 100%;
+  padding-bottom: 10px;  
+}
+.card:hover {
+  box-shadow: 0 0px 8px 5px #0065fc;
+}
+.card img {
+  border-radius: 25px 25px 0 0;
+  height: 60%;
+  object-fit: cover;
+  
+}
+
+.etoiles {
+  /* background-color: yellow; */
+  display: flex;  
+  margin: 0%;
+  padding-left: 10px;
+}
+.etoileBleue {
+  /* background-color: plum; */
+  color: #0065fc;
+  font-size: 11px;
+}
+.etoileGrise {
+  color: #deebff;
+  font-size: 11px;  
+}
+
+h3 {
+  /* background-color: yellowgreen; */
+  font-size: 14px;
+  color: black;
+  margin: 0%;
+  padding-top: 5px;
+  padding-left: 10px;
+}
+.card p {
+  /* background-color: aqua; */
+  
+  color: black;
+  margin: 0%;
+  padding-left: 10px;
+}
+
+.lien {
+  /* background-color: peru; */
+  margin-top: 20px;
+}
+.lien a {
+  color: black;
+  font-weight: bold;
+  margin-top: 10px;
+  margin-left: 20px;
+}
+
+/* POPULAIRES */
+/* .populaires en colonne: une div TitrePop=(ligne h2+iconeMonte), une div colonne cartesPop */
+.populaires {
+  background-color: #f2f2f2;
+  border-radius: 25px;
+  width: 30%;
+  padding: 2%;
+  margin: 10px;
+  display: flex;
+  flex-direction: column;
+}
+
+.TitrePop {
+  /* background-color: green; */
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+}
+.Fleche {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 20px;
+  height: 20px;
+  border-left: 2px solid black;
+  border-bottom: 2px solid black;
+  position:relative;
+  bottom: 5px;
+}
+
+.cartesPop {
+  /* background-color: plum; */
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+  height: 90%;
+  flex-wrap: wrap;
+}
+.cartesPop a {
+  /* background-color: aqua; */
+  width: 90%;
+  height: 25%;
+  display: block;
+}
+.cardpop {
+  background-color: white;
+  display: flex;
+  flex-direction: row;
+  border-radius: 25px;
+  border: 5px white solid;
+  box-shadow: 0px 0px 8px 5px rgb(189, 187, 187);
+  width: 100%;
+  /* min-width: 260px; */
+  height: 100%;
+}
+.cardpop:hover {
+  box-shadow: 0 0px 8px 5px #0065fc;
+}
+
+.cardPopImg {
+  width: 40%;
+}
+.cardPopImg img {
+  border-radius: 25px 0 0 25px;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.cardPopText p {
+  /* background-color: aqua; */
+  
+  color: black;
+  margin-top: 5%;
+  margin-bottom: 0%;
+  padding-left: 10px;
+}
+
+.cardPopText {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  padding: 3% 1% 3% 3%;
+  width: 60%;
+}
+
+/*SECTION ACTIVITES*/
+
+#activites {
+  /* background-color: pink; */
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 50px;
+  align-items: center;
+}
+.cartesActivites {
+  /* background-color: yellow; */
+  display: flex;
+  justify-content: space-around;  
+  height: 415px;
+ }
+#activites h2 {
+  /* background-color: yellowgreen; */
+  width: 100%;
+  font-size: 20px;
+  font-weight: bolder;
+  margin-bottom: 25px;
+  padding-left: 10px;
+}
+
+.colonnedesktop {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 22%;
+  height: 100%;
+}
+.grandeCarte {
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  border-radius: 25px;
+  
+  box-shadow: 0px 0px 8px 5px rgb(189, 187, 187);
+  width: 22%;
+  height: auto;
+}
+
+.h3Activite{
+  /* background-color: red; */
+  padding-top: 15px;
+  padding-left: 10px;
+  padding-bottom: 10px;
+  margin: 0;
+  width: 90%;  
+}
+
+.imgActiviteGC {
+  width: 100%;
+  height: 365px;
+}
+.imgActiviteMC {
+  width: 100%;
+  height: 155px;
+}
+.imgActivitePC {
+  width: 100%;
+  height: 115px;
+}
+.cartesActivites img {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+  border-radius: 25px 25px 0 0;
+}
+
+.moyenneCarte {
+  /* background-color: brown; */
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  border-radius: 25px;
+  
+  box-shadow: 0px 0px 8px 5px rgb(189, 187, 187);
+  width: 100%;
+  height: 50%;  
+}
+
+.petiteCarte {
+  /* background-color: brown; */
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  border-radius: 25px;
+  
+  box-shadow: 0px 0px 8px 5px rgb(189, 187, 187);
+  width: 100%;
+  height: 40%; 
+}
+
+.cartesActivites a:hover {
+  box-shadow: 0 0px 8px 5px #0065fc;
+}
+
+/*FOOTER*/
+footer {
+  background-color: #f2f2f2;
+}
+
+.pourGris {
+  display: flex;
+  justify-content: space-between; 
+  width: 75%;
+  padding:35px 50px 40px 50px;
+}
+
+.piedDePage{
+  
+}
+.piedDePage ul {
+  padding: 0%;
+  margin: 10px 10px 10px 0;
+  height:60%;
+}
+.piedDePage h3 {
+  font-size:15px;
+  padding: 0 0 10px 0;
+}
+.piedDePage li {
+  padding-bottom: 15px;
+}
+.piedDePage a {
+  margin-bottom:15px;
+  color: black;
+}
+.piedDePage a:hover{
+  color: #0065fc;
+}
